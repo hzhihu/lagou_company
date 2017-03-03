@@ -9,14 +9,14 @@ $lgClass = new lg_login_class();
 $positionCollection = (new MongoDB\Client)->lagou->position;
 $commentCollection = (new MongoDB\Client)->lagou->comment;
 $positionCount = $positionCollection->count();
+$commentCount = $commentCollection->count();
 
-//var_dump($positionCount);exit();
+var_dump($positionCount,$commentCount);exit();
 
 for($i=1; $i<50; $i++){
     echo $i."\r\n";
     $stringBody = $lgClass->curlpositionAjaxJson('深圳','php',$i);
     $jsonArray = json_decode($stringBody,true);
-    var_dump($jsonArray);exit();
     if(isset($jsonArray['content']['positionResult']['result']) && !empty($jsonArray['content']['positionResult']['result'])){
         $nowInsertAry = [];
         foreach ($jsonArray['content']['positionResult']['result'] as $key=>$val){

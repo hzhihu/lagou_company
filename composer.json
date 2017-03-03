@@ -1,0 +1,13 @@
+{
+    "name": "cj/lagou",
+    "description": "The curl lagou .",
+    "keywords": ["lagou", "curl"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "slim/pdo": "~1.9",
+        "guzzlehttp/guzzle": "~6.0",
+        "mongodb/mongodb": "^1.1",
+        "jaeger/querylist": "^3.1"
+    }
+}
